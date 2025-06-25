@@ -18,5 +18,19 @@
             "created_at": "2025-06-25T15:07:53.665344Z",
             "expenses": []
         }
+    },
+    "expenses": {
+        "342a165a-8f79-4c6d-bd0c-bb2cd789136e": {
+            "description": "Breakfast",
+            "amount": 200.0,
+            "payer": "Pranav",
+            "participants": [
+                "Pradyumna",
+                "Pranav"
+            ],
+            "expense_id": "342a165a-8f79-4c6d-bd0c-bb2cd789136e",
+            "group_id": "abc374e8-e798-4200-a3c8-dc05ea2a7fe9",
+            "created_at": "2025-06-25T16:27:26.568680Z"
+        }
     }
 }
