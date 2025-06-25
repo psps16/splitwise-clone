@@ -8,7 +8,7 @@ from typing import Dict
 
 # Import schemas
 from . import schemas
-from .db_utils import load_db
+from .database import load_db
 
 # --- Configuration ---
 SECRET_KEY = "a_very_secret_key_that_should_be_changed"
