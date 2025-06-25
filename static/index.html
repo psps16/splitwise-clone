@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SplitWiser</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Auth View: Login & Register -->
+        <!-- Auth View: Login & Register (Unchanged) -->
         <div id="auth-view">
             <h1 class="app-title">SplitWiser</h1>
             <div class="card">
@@ -23,38 +20,24 @@
                     <button class="tab-link active" data-tab="login">Login</button>
                     <button class="tab-link" data-tab="register">Register</button>
                 </div>
-                <!-- Login Form -->
                 <div id="login" class="tab-content active">
                     <form id="login-form">
-                        <div class="input-group">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="login-email" placeholder="Email" required>
-                        </div>
-                        <div class="input-group">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="login-password" placeholder="Password" required>
-                        </div>
+                        <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="login-email" placeholder="Email" required></div>
+                        <div class="input-group"><i class="fas fa-lock"></i><input type="password" id="login-password" placeholder="Password" required></div>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </form>
                 </div>
-                <!-- Register Form -->
                 <div id="register" class="tab-content">
                     <form id="register-form">
-                        <div class="input-group">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="register-email" placeholder="Email" required>
-                        </div>
-                        <div class="input-group">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="register-password" placeholder="Password" required>
-                        </div>
+                        <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="register-email" placeholder="Email" required></div>
+                        <div class="input-group"><i class="fas fa-lock"></i><input type="password" id="register-password" placeholder="Password" required></div>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Main App View (Hidden by default) -->
+        <!-- App View: Main Dashboard (List of Groups) (Hidden by default) -->
         <div id="app-view" class="hidden">
             <header class="app-header">
                 <h1 class="app-title">SplitWiser</h1>
@@ -63,46 +46,67 @@
                     <button id="logout-button" class="btn-logout"><i class="fas fa-sign-out-alt"></i></button>
                 </div>
             </header>
-            
             <main>
                 <div class="card">
                     <h2>Create a New Group</h2>
                     <form id="create-group-form">
-                        <!-- Group Name Input (Unchanged) -->
-                        <div class="input-group">
-                            <i class="fas fa-users"></i>
-                            <input type="text" id="group-name" placeholder="Group Name (e.g., Goa Trip)" required>
-                        </div>
-                        
-                        <!-- New Interactive Member Input -->
+                        <div class="input-group"><i class="fas fa-users"></i><input type="text" id="group-name" placeholder="Group Name (e.g., Goa Trip)" required></div>
                         <div class="member-input-section">
-                            <label for="member-name-input">Add Members (at least 2)</label>
+                            <label for="member-name-input">Add Members</label>
                             <div class="add-member-wrapper">
-                                <div class="input-group">
-                                    <i class="fas fa-user-plus"></i>
-                                    <input type="text" id="member-name-input" placeholder="Enter a member's name">
-                                </div>
+                                <div class="input-group"><i class="fas fa-user-plus"></i><input type="text" id="member-name-input" placeholder="Enter a member's name"></div>
                                 <button type="button" id="add-member-button" class="btn btn-secondary">Add</button>
                             </div>
                         </div>
-                        
-                        <!-- Container where member "pills" will be displayed -->
                         <div id="members-list-container"></div>
-                        
-                        <!-- The main button to create the group -->
                         <button type="submit" id="create-group-button" class="btn btn-primary" disabled>Create Group</button>
                     </form>
                 </div>
-
                 <h2 class="section-title">My Groups</h2>
-                <div id="groups-list">
-                    <!-- Groups will be listed here dynamically -->
+                <div id="groups-list"></div>
+            </main>
+        </div>
+
+        <!-- NEW: Group Detail View (Hidden by default) -->
+        <div id="group-detail-view" class="hidden">
+            <header class="app-header">
+                <button id="back-to-groups-button" class="btn-back"><i class="fas fa-arrow-left"></i> Back</button>
+                <h2 id="group-detail-title" class="view-title">Group Details</h2>
+            </header>
+            <main>
+                <div class="card">
+                    <h3>Add New Expense</h3>
+                    <form id="add-expense-form">
+                        <div class="input-group">
+                            <i class="fas fa-comment-dots"></i>
+                            <input type="text" id="expense-description" placeholder="Description (e.g., Dinner)" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-coins"></i>
+                            <input type="number" id="expense-amount" placeholder="Amount" step="0.01" min="0.01" required>
+                        </div>
+                        <div class="input-group">
+                             <i class="fas fa-user-check"></i>
+                            <select id="expense-payer" required></select>
+                        </div>
+                        <div class="participants-section">
+                            <label>Split between:</label>
+                            <div id="expense-participants-list" class="checkbox-grid">
+                                <!-- Checkboxes will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Expense</button>
+                    </form>
+                </div>
+                
+                <h3>Expenses</h3>
+                <div id="expenses-list">
+                    <!-- Expenses will be listed here -->
                 </div>
             </main>
         </div>
     </div>
     
-    <!-- Loader & Toast Notification elements -->
     <div id="loader" class="hidden"><div class="spinner"></div></div>
     <div id="toast-notification" class="toast"></div>
 

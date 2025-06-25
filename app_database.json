@@ -1,33 +1,22 @@
 {
     "users": {
         "pranav@email.com": {
+            "full_name": "Pranav",
             "email": "pranav@email.com",
-            "full_name": "pranav@email.com",
-            "hashed_password": "$2b$12$aGMCIsTaa66A77/HGk6rOuRtszZSoSa4j0F/25lmIE6VzxZ3wmKG."
+            "hashed_password": "$2b$12$650UbGFOxsloYLhCN.FH0.ZWVsKldU/2DzYcg/lFNX.z1YLjH34xG"
         }
     },
     "groups": {
-        "a7b3684f-3bda-4342-905c-2411f27db8ca": {
-            "name": "Paris Trip",
-            "members": [
-                "Siddarth",
-                "Pradyumna",
-                "Pranav",
-                "Samarth"
-            ],
-            "group_id": "a7b3684f-3bda-4342-905c-2411f27db8ca",
-            "creator_email": "pranav@email.com",
-            "created_at": "2025-06-24T17:46:58.721782Z"
-        },
-        "555b7ae9-16c9-4bc0-befe-a5acfdd0f78f": {
+        "abc374e8-e798-4200-a3c8-dc05ea2a7fe9": {
             "name": "berlin",
             "members": [
-                "Siddarth",
+                "Pradyumna",
                 "Pranav"
             ],
-            "group_id": "555b7ae9-16c9-4bc0-befe-a5acfdd0f78f",
+            "group_id": "abc374e8-e798-4200-a3c8-dc05ea2a7fe9",
             "creator_email": "pranav@email.com",
-            "created_at": "2025-06-24T18:00:54.619984Z"
+            "created_at": "2025-06-25T15:07:53.665344Z",
+            "expenses": []
         }
     }
 }

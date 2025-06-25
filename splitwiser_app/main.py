@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
-from .routers import auth, groups
+from .routers import auth, groups, expenses # <--- Import the new router
 
 # Create the FastAPI app instance
 app = FastAPI(
@@ -13,13 +13,11 @@ app = FastAPI(
 )
 
 # --- Include Routers ---
-# Include the authentication router (for /register, /token)
 app.include_router(auth.router)
-# Include the groups router (for /groups)
 app.include_router(groups.router)
+app.include_router(expenses.router) # <--- Add this line
 
 # --- Mount Static Files and Serve Frontend ---
-# This must come after the API routers
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")

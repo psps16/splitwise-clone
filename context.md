@@ -52,18 +52,21 @@ We have successfully built the foundational, non-AI version of the application, 
 The project has been refactored from a single file into a standard, modular structure:
 
 ```
-.
-├── static/                 # All frontend files
-│   ├── index.html
-│   ├── script.js
-│   └── style.css
-├── routers/                # API endpoints grouped by feature
-│   ├── auth.py             # Handles /register and /token
-│   └── groups.py           # Handles /groups endpoints
-├── database.py             # Logic for reading/writing to the JSON DB
-├── main.py                 # Main application entry point, includes routers
-├── schemas.py              # Pydantic models for data validation
-└── security.py             # Password hashing, JWT logic, user dependencies
+splitwise/                  <-- Your project root directory
+├── splitwiser_app/         <-- THE NEW MAIN APP PACKAGE
+│   ├── __init__.py         <-- NEW (can be empty)
+│   ├── routers/
+│   │   ├── __init__.py     <-- NEW (can be empty)
+│   │   ├── auth.py
+│   │   └── groups.py
+│   ├── database.py
+│   ├── main.py
+│   ├── schemas.py
+│   └── security.py
+└── static/                 <-- Stays at the root
+    ├── index.html
+    ├── script.js
+    └── style.css
 ```
 
 #### 5. Next Logical Steps & Future Vision
