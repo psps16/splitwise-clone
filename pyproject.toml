@@ -1,0 +1,14 @@
+[project]
+name = "splitwise"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.13",
+    "passlib[bcrypt]>=1.7.4",
+    "pydantic[email]>=2.11.7",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.34.3",
+]
